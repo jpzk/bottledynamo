@@ -4,9 +4,8 @@ lazy val commonSettings = Seq(
   version := "1.0.0",
   scalaVersion := "2.12.1",
   crossScalaVersions := Seq("2.12.2","2.11.11"),
-  description := "Good enough DynamoDB abstraction for Finagle with Circe serialization",
-  organizationHomepage := Some(url("https://www.madewithtea.com")),
-  scalacOptions := Seq("-Xexperimental"))
+  description := "Good enough DynamoDB abstraction in Scala with Circe JSON serialization",
+  organizationHomepage := Some(url("https://www.madewithtea.com")))
 
 val scalaTestVersion = "3.0.2"
 val circeVersion = "0.7.0"
