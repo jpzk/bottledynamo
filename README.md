@@ -29,6 +29,8 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.put("PK")(SomeClass("value",2)))
     } yield table.get("PK")
 
+    Await.result(entry)
+
 ## DynamoDB 
 
     import com.madewithtea.bottledynamo.{Store, Table, KV, DynamoDB, InMemoryKVImpl}
@@ -45,6 +47,8 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.create
       _ <- table.put("PK")(SomeClass("value",2)))
     } yield table.get("PK")
+
+    Await.result(entry)
 
 ## DynamoDB and Range Tables
 
@@ -63,6 +67,8 @@ Create a table with DynamoDB interface first.
     val entry = for { 
       _ <- table.put("PK", 10000)(SomeClass("value",2)))
     } yield table.get("PK",10000)
+
+    Await.result(entry)
 
 ## DynamoDB and Range Queries
 
@@ -83,4 +89,5 @@ Create a table with DynamoDB interface first
       _ <- table.put("PK", 20000)(SomeClass("value",2)))
     } yield table.query("PK",Some(0), Some(30000))
 
+    Await.result(entries)
 
