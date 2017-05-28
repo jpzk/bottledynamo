@@ -46,7 +46,7 @@ publishArtifact in Test := false
 pomIncludeRepository := { _ => false }
 
 pomExtra := (
-  <url></url>
+  <url>https://github.com/jpzk/bottledynamo</url>
     <licenses>
       <license>
         <name>Apache License Version 2.0</name>
