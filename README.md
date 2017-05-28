@@ -46,7 +46,7 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.put("PK")(SomeClass("value",2)))
     } yield table.get("PK")
 
-## DynamoDB and Range tables
+## DynamoDB and Range Tables
 
 Create a table with DynamoDB interface first.
 
