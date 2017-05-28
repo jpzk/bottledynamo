@@ -14,7 +14,7 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
 
     val bottledynamo = "com.madewithtea" %% "bottledynamo" % "1.0.0"
 
-## In-Memory (for tests) (with JSON Serialization)
+## In-Memory (for tests)
 
     import com.madewithtea.bottledynamo.{Store, Table, InMemoryKVImpl}
     import io.circe.generic.auto._
@@ -29,7 +29,7 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.put("PK")(SomeClass("value",2)))
     } yield table.get("PK")
 
-## DynamoDB (with JSON Serialization)
+## DynamoDB 
 
     import com.madewithtea.bottledynamo.{Store, Table, KV, DynamoDB, InMemoryKVImpl}
     import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
@@ -46,7 +46,9 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.put("PK")(SomeClass("value",2)))
     } yield table.get("PK")
 
-## DynamoDB and Range tables (with JSON Serialization), create table with DynamoDB interface.
+## DynamoDB and Range tables
+
+Create a table with DynamoDB interface first.
 
     import com.madewithtea.bottledynamo.{Store, Table, KV, DynamoDB, InMemoryKVImpl}
     import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
@@ -62,7 +64,9 @@ Bottle Dynamo depends on Twitter Util Core (for futures), and on the AWS Java SD
       _ <- table.put("PK", 10000)(SomeClass("value",2)))
     } yield table.get("PK",10000)
 
-## DynamoDB and Range Queries, create table with DynamoDB interface 
+## DynamoDB and Range Queries
+
+Create a table with DynamoDB interface first
 
     import com.madewithtea.bottledynamo.{Store, Table, KV, DynamoDB, InMemoryKVImpl}
     import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
